@@ -40,7 +40,7 @@ export default async function HomePage({ searchParams }: PaginationParams) {
     photos.length > 0
       ? <div className="space-y-4">
         <AnimateItems
-          className="space-y-1"
+          className="space-y-2"
           duration={0.7}
           staggerDelay={0.15}
           distanceOffset={0}
