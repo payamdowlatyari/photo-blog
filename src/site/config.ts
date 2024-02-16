@@ -5,7 +5,7 @@ import { makeUrlAbsolute, shortenUrl } from '@/utility/url';
 
 export const SITE_TITLE =
   process.env.NEXT_PUBLIC_SITE_TITLE ||
-  'Photo Blog';
+  'Photography';
 
 const VERCEL_ENV = process.env.NEXT_PUBLIC_VERCEL_ENV;
 const VERCEL_DEPLOYMENT_URL = process.env.NEXT_PUBLIC_VERCEL_URL;

@@ -4,7 +4,7 @@ import { clsx } from 'clsx/lite';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import SiteGrid from '../components/SiteGrid';
-import { SITE_DOMAIN_OR_TITLE } from '@/site/config';
+import { SITE_DOMAIN_OR_TITLE, SITE_TITLE } from '@/site/config';
 import ViewSwitcher, { SwitcherSelection } from '@/site/ViewSwitcher';
 import {
   PATH_ROOT,
@@ -15,6 +15,7 @@ import {
   isPathSignIn,
 } from '@/site/paths';
 import AnimateItems from '../components/AnimateItems';
+import ThemeSwitcher from './ThemeSwitcher';
 
 export default function NavClient({
   showAdmin,
@@ -59,18 +60,24 @@ export default function NavClient({
               key="nav"
               className={clsx(
                 'flex items-center',
-                'w-full min-h-[4rem]',
+                'w-full min-h-[6rem]',
                 'leading-none',
               )}>
-              <div className="flex flex-grow items-center gap-4">
+              <div className="flex flex-grow items-center gap-4 justify-between">
+                <div className="hidden xs:block text-balance">
+                  {renderLink(SITE_TITLE, PATH_ROOT)}
+                </div>
+                <div className="items-center">
                 <ViewSwitcher
                   currentSelection={switcherSelectionForPath()}
                   showAdmin={showAdmin}
                 />
+                </div>
+                <div className="items-center">
+                 <ThemeSwitcher />
+                 </div>
               </div>
-              <div className="hidden xs:block text-right text-balance">
-                {renderLink(SITE_DOMAIN_OR_TITLE, PATH_ROOT)}
-              </div>
+              
             </div>]
             : []}
         />

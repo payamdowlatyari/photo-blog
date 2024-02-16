@@ -12,6 +12,7 @@ import SubmitButtonWithStatus from '@/components/SubmitButtonWithStatus';
 import { signOutAction } from '@/auth/actions';
 import Spinner from '@/components/Spinner';
 import AnimateItems from '@/components/AnimateItems';
+import CopyRight from './CopyRight';
 
 export default function FooterClient({
   userEmail,
@@ -61,7 +62,7 @@ export default function FooterClient({
                   </>}
               </div>
               <div className="flex items-center h-4">
-                <ThemeSwitcher />
+                <CopyRight />
               </div>
             </div>]
             : []}
